@@ -2,7 +2,7 @@
 
 import requests
 import urllib
-import os
+
 
 def login_to_api(filename):
     filer = open("meme-info.txt","r")
@@ -15,7 +15,7 @@ def login_to_api(filename):
 
 
 
-#Fetch available mems via requests.get
+#Fetch available memes via requests.get
 def retrieve_memes():
     data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
     images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
